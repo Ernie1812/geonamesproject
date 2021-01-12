@@ -1,0 +1,162 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="AJAX/PHP/CURL/JSON project">
+		<meta name="author" content="Ernesto Estrada">
+		<title>Geonames API Project</title>
+		<link rel="stylesheet" href="/geonamesProject/libs/css/styles.css">
+	</head>
+
+	<body>
+		<div id="preloader"></div>
+		<table>
+			<th>API Name</th>
+			<th>API Description</th>
+			<th>Run</th>
+
+			<tr>
+				<td>1. findNearByWeather</td>
+				<td>Disply most recent weather observation for selected city:</td>
+				<td>
+					<select id="citySelect">
+						<option data-longitude="0.1278" data-latitude="51.5074">London</option>
+						<option data-longitude="-97.771889" data-latitude="30.26057">Chicago</option>
+						<option data-longitude="14.4378" data-latitude="50.0755">Prague</option>
+						<option data-longitude="28.9784" data-latitude="41.0082">Istanbul</option>
+						<option data-longitude="31.2357" data-latitude="30.0444">Cairo</option>
+					</select>
+					<button id="weatherRun">Run</button>
+				</td>
+			</tr>
+
+			<tr>
+				<td>2. children</td>
+				<td>Display list of counties in a selected state:</td>
+				<td>
+					<select id="selState">
+						<option value="5551752">Arizona</option>
+						<option value="5332921">California</option>
+						<option value="5509151">Nevada</option>
+						<option value="5744337">Oregon</option>
+						<option value="5815135">Washington</option>
+					</select>
+					
+					<button id="countyRun">Run</button>
+			
+				</td>
+			</tr>
+
+			<tr>
+				<td>3. timezone</td>
+				<td>Display timeZoneID, sunrise and sunset for selected city:</td>
+				<td>
+					<select id="cityTimeSelect">
+						<option data-longitude="-97.771889" data-latitude="30.26057">Chicago</option>
+						<option data-longitude="0.1278" data-latitude="51.5074">London</option>
+						<option data-longitude="14.4378" data-latitude="50.0755">Prague</option>
+						<option data-longitude="28.9784" data-latitude="41.0082">Istanbul</option>
+						<option data-longitude="31.2357" data-latitude="30.0444">Cairo</option>
+					</select>
+					<button id="timezoneRun">Run</button>
+				</td>
+			</tr>
+		</table>
+
+		<!--START Weather Results -->
+		<div id="weatherResults">
+			<table>
+
+				<tr>
+					<td>
+						Date & Time: 
+					</td>
+					<td id="datetime">
+						
+					</td>
+
+				</tr>
+				<tr>
+					<td>
+						Temperature: 
+					</td>
+					<td id="temperature">
+						
+					</td>
+
+				</tr>
+				<tr>
+					<td>
+						Conditions: 
+					</td>
+					<td id="weatherCondition">
+						
+					</td>
+
+				</tr>
+
+				<tr>
+					<td>
+						Clouds: 
+					</td>
+					<td id="clouds">
+						
+					</td>
+
+				</tr>
+
+			</table>
+		</div>
+
+	<!-- END Weather Results -->
+
+				<!-- START Counties Results -->
+				<div id="countyResults">
+					<h3>List of Counties:</h3>
+					<ol id="counties" data-role="listview"></ol>
+				</div>
+
+		<!-- END Counties Results -->
+		
+	<!-- START TimeZone Results -->
+	<div id="timeZoneResults">
+		<table>
+			<tr>
+				<td>
+					TimeZoneID: 
+				</td>
+				<td id="timezoneId">
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					Sunrise: 
+				</td>
+				<td id="sunrise">
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					Sunset: 
+				</td>
+				<td id="sunset">
+				</td>
+			</tr>
+		</table>
+	</div>
+			<!-- END TimeZone Results -->
+		
+
+		<script type="application/javascript" src="libs/js/jquery-2.2.3.min.js"></script>
+		<script type="application/javascript" src="libs/js/preloader.js"></script>
+		<script type="application/javascript" src="libs/js/stateCountiesScript.js"></script>
+		<script type="application/javascript" src="libs/js/timezoneScript.js"></script>
+		<script type="application/javascript" src="libs/js/weatherScript.js"></script>
+
+	</body>
+
+</html>
